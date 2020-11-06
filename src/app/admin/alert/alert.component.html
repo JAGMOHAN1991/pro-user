@@ -1,0 +1,4 @@
+<div *ngIf="flashMessage && !!flashMessage.message"  class="alert alert-{{flashMessage.type}} display-hide" role="alert" style="display: block;">
+  <button type="button" class="close-alert" (click)="flashMessage=undefined">×</button>
+  <p>{{flashMessage.message}}</p>
+</div>

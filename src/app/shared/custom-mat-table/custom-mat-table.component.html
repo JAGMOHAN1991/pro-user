@@ -1,0 +1,41 @@
+<div *ngIf="dataSource" fxLayout="column" class="mat-elevation-z8">
+    <mat-form-field class="px-3 py-1">
+        <input matInput placeholder="Search..." (keyup)="applyFilter($event.target.value)">
+    </mat-form-field>
+</div>
+<table mat-table *ngIf="dataSource" [dataSource]="customDataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="{{ displayColumn.key }}" *ngFor="let displayColumn of dataColumns">
+    <th mat-header-cell *matHeaderCellDef> {{ displayColumn.label }} </th>
+    <div *ngIf="displayColumn.key==='action';else main_content">
+        <td mat-cell *matCellDef="let element">
+          <a class="action" *ngFor="let subAction of displayColumn.actionArr" routerLink="{{subAction.actionUrl}}" [queryParams]="getRouteParameter(element, subAction)">{{subAction.actionLabel}}</a> </td>
+    </div>
+      <div *ngIf="displayColumn.key==='retailer_count';else main_content">
+          <td mat-cell *matCellDef="let element">
+              <a class="action" *ngFor="let subAction of displayColumn.actionArr" routerLink="{{subAction.actionUrl}}" [queryParams]="getRouteParameterWithName(element, subAction)">{{ element[displayColumn.key] }} {{subAction.actionLabel}}</a> </td>
+      </div>
+	  <div *ngIf="displayColumn.key==='receipt';else main_content">
+		  <td mat-cell *matCellDef="let element">
+			  <a class="action" *ngFor="let subAction of displayColumn.actionArr" routerLink="{{subAction.actionUrl}}" [queryParams]="getRouteParameter(element, subAction)">{{subAction.actionLabel}}</a> </td>
+	  </div>
+      <div *ngIf="displayColumn.key==='created_at';else main_content">
+          <td mat-cell *matCellDef="let element"> {{ (!!displayColumn.childrenOf) ? element[displayColumn.childrenOf][displayColumn.key] : element[displayColumn.key] | date}} </td>
+      </div>
+      <div *ngIf="displayColumn.key==='update_data';else main_content">
+          <td mat-cell *matCellDef="let element">
+              <button class="action" *ngFor="let subAction of displayColumn.actionArr" (click)="update(element[subAction.actionKey],element['status'])"> {{subAction.actionLabel}}</button> </td>
+      </div>
+    <ng-template #main_content>
+        <td mat-cell *matCellDef="let element"> {{ (!!displayColumn.childrenOf) ? element[displayColumn.childrenOf][displayColumn.key] : element[displayColumn.key]}} </td>
+    </ng-template>
+
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+</table>
+<div fxLayout="column" class="text-right">
+  <mat-paginator [showFirstLastButtons]="true" [pageSizeOptions]="pageLengths" class="pull-left"></mat-paginator>
+</div>
+<div *ngIf="!dataSource" fxLayout="column" fxLayoutAlign="cnter center" class="user-spinner">
+    <mat-spinner color="accent"></mat-spinner>
+</div>

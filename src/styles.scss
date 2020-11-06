@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://cdn.quilljs.com/1.2.2/quill.snow.css');
+@import url('https://cdn.quilljs.com/1.2.2/quill.bubble.css');
+// indigo-pink, deeppurple-amber, purple-green and pink-bluegrey.
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "app/theme/styles/base";
+@import "app/theme/styles/spaces";
+@import "app/theme/styles/libs-override";
+@import "app/theme/styles/theme";
+@import "app/theme/styles/gradients";
+@import "app/theme/styles/rtl";
+.confirm-redeem-plan-dialog-container .mat-dialog-container {
+    width: 800px;
+    max-height: 600px;
+}
+
+.confirm-plan-dialog-container .mat-dialog-container {
+    width: 500px !important;
+}
+
+.quick-view-plan-dialog-container .mat-dialog-container {
+    width: 600px !important;
+}
+
+.form-modal-dialog-container .mat-dialog-container {
+    width: 600px;
+    max-height: 500px;
+    label.mat-form-field-label {
+        text-align: center;
+    }
+}
+
+.cdm-mapping-history-dialog-container .mat-dialog-container {
+    width: 800px !important;
+    .pw_accordian .mat-expansion-panel-body {
+        padding: 0 !important;
+    }
+}
+
+.cnf-box-dialog-container {
+    max-width: 600px !important;
+}
+
+.download-btn {
+    float: right;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+
+@-webkit-keyframes three-quarters {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes three-quarters {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes three-quarters {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes three-quarters {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Styles for old versions of IE */
+
+button .btn-spinner {
+    font-family: sans-serif;
+    font-weight: 100;
+    -webkit-animation: three-quarters 1250ms infinite linear;
+    -moz-animation: three-quarters 1250ms infinite linear;
+    -ms-animation: three-quarters 1250ms infinite linear;
+    -o-animation: three-quarters 1250ms infinite linear;
+    animation: three-quarters 1250ms infinite linear;
+    border: 3px solid #214799;
+    border-right-color: transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 18px;
+    height: 18px;
+}
+
+button .btn-spinner:not(:required) {
+    margin-left: -22px;
+    opacity: 0;
+    transition: 0.4s margin ease-out, 0.2s opacity ease-out;
+}
+
+button.is-loading .btn-spinner {
+    transition: 0.2s margin ease-in, 0.4s opacity ease-in;
+    margin-left: 5px;
+    opacity: 1;
+}
+
+td.mat-cell.ng-star-inserted,
+th.mat-cell.ng-star-inserted {
+    padding-right: 5px;
+}
+
+#app-spinner[_ngcontent-c0] {
+    background: #fff !important;
+    opacity: 0.5 !important;
+}

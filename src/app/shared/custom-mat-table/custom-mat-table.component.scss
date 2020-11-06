@@ -1,0 +1,28 @@
+/* @import "../../../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+.mat-table {
+  width: 100%;
+  background: #fff;
+  border-color: grey !important;
+}
+
+.mat-table tr {
+  border-color: grey !important;
+}
+
+td.mat-cell,
+th.mat-header-cell {
+  border-bottom-color: rgba(0, 0, 0, .12);
+}
+
+.w-10 {
+  width: 15%;
+}
+.action{
+  display: block;
+}
+
+th,
+td {
+    min-width: 100px;
+}

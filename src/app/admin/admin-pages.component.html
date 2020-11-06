@@ -1,0 +1,34 @@
+<div id="main" perfectScrollbar (psScrollY)="onPsScrollY($event)" class="h-100">
+
+    <header class="header">
+
+        <mat-toolbar class="top-toolbar" [class.mat-elevation-z2]="settings.fixedHeader">
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" class="w-100 pr-3">
+                    <button *ngIf="settings.menu == 'vertical'" mat-icon-button (click)="sidenav.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-toolbar>
+    </header>
+
+    <mat-drawer-container class="page-wrapper">
+
+        <mat-drawer #sidenav *ngIf="settings.menu == 'vertical'" [opened]="settings.sidenavIsOpened" [mode]="(settings.sidenavIsPinned) ? 'side' : 'over'" (openedStart)="showSidenav = !showSidenav" (closedStart)="showSidenav = !showSidenav" class="sidenav mat-elevation-z6" autoFocus="false">
+            <mat-toolbar *ngIf="settings.fixedSidenav" class="top-toolbar">
+            </mat-toolbar>
+        </mat-drawer>
+        
+        <div fxLayout="row" fxLayoutAlign="center">
+            <h2>Welcome Protected User</h2>
+        </div>
+
+    </mat-drawer-container>
+
+    <div #backToTop fxLayout="row" fxLayoutAlign="center center" class="back-to-top" (click)="scrollToTop()">
+        <mat-icon>arrow_upward</mat-icon>
+    </div>
+</div>

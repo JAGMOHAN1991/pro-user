@@ -1,0 +1,43 @@
+.contact-info {
+    width: 100%;
+    a {
+        text-decoration: none;
+    }
+    a {
+        background-color: transparent;
+    }
+    .moreInfoBox {
+        padding: 0px 20px;
+    }
+    .moreInfoBox,
+    .moreInfoBox a {
+        color: #283593;
+        text-align: center;
+    }
+    .customerSuppTxt,
+    .copyRightTxt {
+        font-size: 13px;
+        color: #444;
+        font-weight: bold;
+    }
+}
+
+.title {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 8px;
+    color: #666;
+}
+
+.alert-red {
+    color: red !important;
+    text-decoration: none;
+    padding-left: 8px !important;
+}
+
+@media (max-width: 767px) {
+    .alert-red {
+        float: right !important;
+    }
+}

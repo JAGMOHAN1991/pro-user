@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<div mat-dialog-content>
+  <p>{{message}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button *ngIf="ignoreAvailable" color="accent" [mat-dialog-close]="'OK'" tabindex="3">Igonre If Already Added</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="'OK'" tabindex="2">Proceed</button>
+  <button mat-raised-button (click)="onNoClick()" tabindex="-1">No Thanks</button>
+</div>

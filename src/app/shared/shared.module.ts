@@ -1,0 +1,153 @@
+import { CustomMatTableComponent } from './custom-mat-table/custom-mat-table.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule
+} from '@angular/material';
+import { ContentHeaderComponent } from './content-header/content-header.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ConfirmationBoxComponent } from './confirmation-box/confirmation-box.component';
+import { SelectSearchMatInputComponent } from './select-search-mat-input/select-search-mat-input.component';
+import { ReadableKeyPipe } from '../theme/pipes/reports/readable-key.pipe';
+import { SwapKeyValueJsonPipe } from '../theme/pipes/json/swap-key-value-json.pipe';
+import { RightsReservedComponent } from './rights-reserved/rights-reserved.component';
+import { Angular2PromiseButtonModule as PromiseButtonModule } from 'angular2-promise-buttons/dist';
+import { AlertModule } from '../admin/alert/alert.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule,
+    FlexLayoutModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
+    NgxChartsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AlertModule,
+    PromiseButtonModule.forRoot(),
+  ],
+  exports: [
+    AlertModule,
+    FlexLayoutModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ContentHeaderComponent,
+    BreadcrumbComponent,
+    AnalyticsComponent,
+    CustomMatTableComponent,
+    ConfirmationBoxComponent,
+    SelectSearchMatInputComponent,
+    ReadableKeyPipe,
+    SwapKeyValueJsonPipe,
+    RightsReservedComponent,
+      AlertModule
+  ],
+  declarations: [
+    ContentHeaderComponent,
+    BreadcrumbComponent,
+    AnalyticsComponent,
+    CustomMatTableComponent,
+    ConfirmationBoxComponent,
+    SelectSearchMatInputComponent,
+    ReadableKeyPipe,
+    SwapKeyValueJsonPipe,
+    RightsReservedComponent,
+  ]
+})
+export class SharedModule { }
