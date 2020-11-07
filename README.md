@@ -1,27 +1,55 @@
-# Payworld Agent Panel
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## Development server
+## About Protected user UI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Purpose of Protected user UI is to manage user By SGS 2-tier application
 
-## Code scaffolding
+Requirment PHP 7.3 node 8x
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Steps to install
 
-## Build
+- clone project from git or download
+- npm install
+- npm run start
+- got to backend/api directory
+- copy .env-example file into .env
+- run composer install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+create .htaccess file in backend folder
 
-## Running unit tests
+########################
+RewriteEngine on
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule (.*) api/public/index.php [L]
 
-## Running end-to-end tests
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.html [L]
+#######################
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+Create Virtual host 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<VirtualHost *:80>
+    ServerName pro-user
+    ServerAlias pro-user
+    DocumentRoot "/var/www/html/htdocs/pro-user/public"
+    Options Indexes FollowSymLinks
+    <Directory "/var/www/html/htdocs/pro-user/public">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+
