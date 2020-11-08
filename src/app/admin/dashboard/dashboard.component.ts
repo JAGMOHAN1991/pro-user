@@ -20,9 +20,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.loginData = this.localStorageService.getJsonItem(LocalStorageService.LOGIN_DATA);
     this.userType = this.localStorageService.getJsonItem(LocalStorageService.USER_TYPE);
-    if(this.userType === 'SALES_EXECUTIVE'){
-     return this.router.navigate(['/fieldx']);
-    }
   }
 
 }

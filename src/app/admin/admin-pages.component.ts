@@ -26,6 +26,7 @@ export class AdminPagesComponent implements OnInit, AfterViewInit {
   public menuOption: string;
   public menuTypes = ['default', 'compact', 'mini'];
   public menuTypeOption: string;
+  loginData: any;
 
   constructor(public appSettings: AppSettings, public router: Router, private localStorageService: LocalStorageService) {
     this.settings = this.appSettings.settings;
@@ -41,6 +42,7 @@ export class AdminPagesComponent implements OnInit, AfterViewInit {
     this.menuOption = this.settings.menu;
     this.menuTypeOption = this.settings.menuType;
     this.defaultMenu = this.settings.menu;
+    this.loginData = this.localStorageService.getJsonItem(LocalStorageService.LOGIN_DATA);
   }
 
   ngAfterViewInit() {

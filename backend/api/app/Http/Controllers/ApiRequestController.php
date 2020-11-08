@@ -7,6 +7,7 @@ use App\Library\Core;
 use App\Library\GuzzleRequest;
 use App\Library\MCryptAES;
 use App\Library\Session;
+use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
@@ -40,6 +41,9 @@ class ApiRequestController
                 if ($queryList['action'] === 'oauth/token') {
                     \Log::error('Response', $Response);
                     $this->login($Session, $Response['data']);
+                } else if ($queryList['action'] === 'login_data') {
+                    $key = 'my-jwt-key';
+                    $Response['data']['data'] = JWT::decode($Response['data']['data'], $key, ['HS256']);
                 }
             }
 
